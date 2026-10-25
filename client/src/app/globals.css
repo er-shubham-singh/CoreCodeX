@@ -275,9 +275,16 @@ p, span, a, label, button, input, select, textarea {
 }
 
 @media (max-width: 640px) {
-  .glass-card {
+  .glass-card:not(.card-flush) {
     padding: 1.25rem !important;
   }
+  .card-flush {
+    padding: 0 !important;
+  }
+}
+
+.card-flush {
+  padding: 0 !important;
 }
 
 .glass-card:hover {

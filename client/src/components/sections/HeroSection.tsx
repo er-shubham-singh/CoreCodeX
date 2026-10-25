@@ -148,7 +148,8 @@ export const HeroSection: React.FC = () => {
                 position: 'absolute',
                 top: '15px',
                 right: '10px',
-                padding: '0.85rem 1.25rem',
+                padding: '0.85rem 1.35rem',
+                minWidth: '180px',
                 borderRadius: 'var(--radius-md)',
                 display: 'flex',
                 alignItems: 'center',
@@ -166,13 +167,14 @@ export const HeroSection: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Activity size={18} />
               </div>
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>API Global Latency</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)' }}>0.12ms</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>API Global Latency</div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)' }}>0.12ms</div>
               </div>
             </div>
 
@@ -183,7 +185,8 @@ export const HeroSection: React.FC = () => {
                 position: 'absolute',
                 bottom: '25px',
                 left: '10px',
-                padding: '0.85rem 1.25rem',
+                padding: '0.85rem 1.35rem',
+                minWidth: '180px',
                 borderRadius: 'var(--radius-md)',
                 display: 'flex',
                 alignItems: 'center',
@@ -202,13 +205,14 @@ export const HeroSection: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  flexShrink: 0,
                 }}
               >
                 <Zap size={18} />
               </div>
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Live Production SLA</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)' }}>99.99% Uptime</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Live Production SLA</div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)' }}>99.99% Uptime</div>
               </div>
             </div>
           </div>

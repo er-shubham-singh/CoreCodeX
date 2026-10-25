@@ -90,13 +90,14 @@ export default function WorkPage() {
           {filteredProjects.map((project) => (
             <TiltCard3D key={project.id} maxTilt={6}>
               <div
-                className="glass-card"
+                className="glass-card card-flush"
                 style={{
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   overflow: 'hidden',
                   background: 'var(--bg-card)',
+                  padding: 0,
                 }}
               >
                 {/* Browser Frame Window Header */}
@@ -168,36 +169,38 @@ export default function WorkPage() {
                   </div>
                 </div>
 
-                {/* Content */}
-                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                {/* Content - Decreased left/right padding so it sits closer to card border */}
+                <div style={{ padding: '1.25rem 0.95rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.35rem', marginBottom: '0.75rem', color: 'var(--text-main)' }}>
+                    <h3 style={{ fontSize: '1.3rem', marginBottom: '0.65rem', color: 'var(--text-main)' }}>
                       {project.title}
                     </h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                       {project.shortDescription}
                     </p>
 
-                    {/* Metrics Grid */}
+                    {/* Metrics Grid - Increased width for API Latency and written stats */}
                     <div
                       style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 75px), 1fr))',
-                        gap: '8px',
-                        padding: '1rem',
+                        gridTemplateColumns: 'repeat(2, 1fr)',
+                        gap: '10px 12px',
+                        padding: '0.85rem 0.85rem',
                         borderRadius: 'var(--radius-md)',
                         background: 'var(--bg-surface)',
                         border: '1px solid var(--border-color)',
-                        marginBottom: '1.5rem',
+                        marginBottom: '1.25rem',
                         textAlign: 'center',
+                        width: '100%',
+                        boxSizing: 'border-box',
                       }}
                     >
                       {project.metrics.map((metric, i) => (
-                        <div key={i}>
-                          <div style={{ fontSize: '1rem', fontWeight: 900, color: 'var(--primary)' }}>
+                        <div key={i} style={{ minWidth: 0, padding: '2px 4px' }}>
+                          <div style={{ fontSize: '1.15rem', fontWeight: 900, color: 'var(--primary)', lineHeight: 1.2 }}>
                             {metric.value}
                           </div>
-                          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '3px', letterSpacing: '0.02em', lineHeight: 1.3 }}>
                             {metric.label}
                           </div>
                         </div>
@@ -205,7 +208,7 @@ export default function WorkPage() {
                     </div>
 
                     {/* Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.25rem' }}>
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
@@ -224,21 +227,30 @@ export default function WorkPage() {
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  {/* Actions - Adjusted button widths to span full card width with clean proportions */}
                   <div
                     style={{
                       display: 'flex',
                       gap: '0.75rem',
                       borderTop: '1px solid var(--border-color)',
-                      paddingTop: '1.25rem',
+                      paddingTop: '1.1rem',
+                      width: '100%',
                     }}
                   >
                     <button
                       onClick={() => setActiveProject(project)}
                       className="btn-pill-secondary"
-                      style={{ flex: 1, padding: '0.65rem', fontSize: '0.85rem', justifyContent: 'center' }}
+                      style={{
+                        flex: 1,
+                        padding: '0.75rem 0.85rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 700,
+                        justifyContent: 'center',
+                        borderRadius: 'var(--radius-full)',
+                        minWidth: 0,
+                      }}
                     >
-                      <Eye size={15} />
+                      <Eye size={16} />
                       <span>Case Study</span>
                     </button>
                     <a
@@ -246,10 +258,19 @@ export default function WorkPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-pill-primary"
-                      style={{ flex: 1, padding: '0.65rem', fontSize: '0.85rem', justifyContent: 'center', textDecoration: 'none' }}
+                      style={{
+                        flex: 1,
+                        padding: '0.75rem 0.85rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 700,
+                        justifyContent: 'center',
+                        textDecoration: 'none',
+                        borderRadius: 'var(--radius-full)',
+                        minWidth: 0,
+                      }}
                     >
                       <span>Live Site</span>
-                      <ExternalLink size={15} />
+                      <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>

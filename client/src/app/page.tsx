@@ -149,13 +149,14 @@ export default function HomePage() {
             {featuredWorks.map((project) => (
               <TiltCard3D key={project.id} maxTilt={5}>
                 <div
-                  className="glass-card"
+                  className="glass-card card-flush"
                   style={{
                     overflow: 'hidden',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'var(--bg-card)',
+                    padding: 0,
                   }}
                 >
                   <div style={{ position: 'relative', width: '100%', height: '230px', backgroundColor: '#07090E' }}>
@@ -177,18 +178,27 @@ export default function HomePage() {
                       {project.category}
                     </div>
                   </div>
-                  <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                  <div style={{ padding: '1.25rem 0.95rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
                     <div>
                       <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>{project.title}</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                         {project.shortDescription}
                       </p>
                     </div>
-                    <div style={{ display: 'flex', gap: '0.75rem', borderTop: '1px solid var(--border-color)', paddingTop: '1rem' }}>
+                    <div style={{ display: 'flex', gap: '0.75rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.1rem', width: '100%' }}>
                       <Link
                         href="/work"
                         className="btn-pill-secondary"
-                        style={{ flex: 1, padding: '0.6rem', fontSize: '0.82rem', justifyContent: 'center', textDecoration: 'none' }}
+                        style={{
+                          flex: 1,
+                          padding: '0.75rem 0.85rem',
+                          fontSize: '0.88rem',
+                          fontWeight: 700,
+                          justifyContent: 'center',
+                          textDecoration: 'none',
+                          borderRadius: 'var(--radius-full)',
+                          minWidth: 0,
+                        }}
                       >
                         Full Case Study
                       </Link>
@@ -197,10 +207,19 @@ export default function HomePage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-pill-primary"
-                        style={{ flex: 1, padding: '0.6rem', fontSize: '0.82rem', justifyContent: 'center', textDecoration: 'none' }}
+                        style={{
+                          flex: 1,
+                          padding: '0.75rem 0.85rem',
+                          fontSize: '0.88rem',
+                          fontWeight: 700,
+                          justifyContent: 'center',
+                          textDecoration: 'none',
+                          borderRadius: 'var(--radius-full)',
+                          minWidth: 0,
+                        }}
                       >
                         <span>Live Site</span>
-                        <ExternalLink size={14} />
+                        <ExternalLink size={16} />
                       </a>
                     </div>
                   </div>

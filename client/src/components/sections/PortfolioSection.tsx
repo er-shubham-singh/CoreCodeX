@@ -40,13 +40,14 @@ export const PortfolioSection: React.FC = () => {
           {portfolioData.map((project) => (
             <TiltCard3D key={project.id} maxTilt={6}>
               <div
-                className="glass-card"
+                className="glass-card card-flush"
                 style={{
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   overflow: 'hidden',
                   background: 'var(--bg-card)',
+                  padding: 0,
                 }}
               >
                 {/* Browser Window Frame Header */}
@@ -119,8 +120,8 @@ export const PortfolioSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Content Body */}
-                <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                {/* Content Body - Closer to div border */}
+                <div style={{ padding: '1.25rem 0.95rem', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
                   <div>
                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.6rem', color: 'var(--text-main)' }}>
                       {project.title}
@@ -129,26 +130,28 @@ export const PortfolioSection: React.FC = () => {
                       {project.shortDescription}
                     </p>
 
-                    {/* Performance Metrics */}
+                    {/* Performance Metrics - Increased width */}
                     <div
                       style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 75px), 1fr))',
-                        gap: '8px',
-                        padding: '0.85rem',
+                        gridTemplateColumns: 'repeat(2, 1fr)',
+                        gap: '10px 12px',
+                        padding: '0.85rem 0.85rem',
                         borderRadius: 'var(--radius-md)',
                         background: 'var(--bg-surface)',
                         border: '1px solid var(--border-color)',
                         marginBottom: '1.25rem',
                         textAlign: 'center',
+                        width: '100%',
+                        boxSizing: 'border-box',
                       }}
                     >
-                      {project.metrics.slice(0, 3).map((metric, i) => (
-                        <div key={i}>
-                          <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--primary)' }}>
+                      {project.metrics.map((metric, i) => (
+                        <div key={i} style={{ minWidth: 0, padding: '2px 4px' }}>
+                          <div style={{ fontSize: '1.15rem', fontWeight: 900, color: 'var(--primary)', lineHeight: 1.2 }}>
                             {metric.value}
                           </div>
-                          <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+                          <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginTop: '3px', letterSpacing: '0.02em', lineHeight: 1.3 }}>
                             {metric.label}
                           </div>
                         </div>
@@ -156,7 +159,7 @@ export const PortfolioSection: React.FC = () => {
                     </div>
 
                     {/* Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.25rem' }}>
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
@@ -175,13 +178,14 @@ export const PortfolioSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Buttons - Full-width clean proportions */}
                   <div
                     style={{
                       display: 'flex',
                       gap: '0.75rem',
                       borderTop: '1px solid var(--border-color)',
-                      paddingTop: '1.25rem',
+                      paddingTop: '1.1rem',
+                      width: '100%',
                     }}
                   >
                     <button
@@ -189,12 +193,15 @@ export const PortfolioSection: React.FC = () => {
                       className="btn-pill-secondary"
                       style={{
                         flex: 1,
-                        padding: '0.6rem 0.9rem',
-                        fontSize: '0.82rem',
+                        padding: '0.75rem 0.85rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 700,
                         justifyContent: 'center',
+                        borderRadius: 'var(--radius-full)',
+                        minWidth: 0,
                       }}
                     >
-                      <Eye size={14} />
+                      <Eye size={16} />
                       <span>Case Study</span>
                     </button>
 
@@ -205,14 +212,17 @@ export const PortfolioSection: React.FC = () => {
                       className="btn-pill-primary"
                       style={{
                         flex: 1,
-                        padding: '0.6rem 0.9rem',
-                        fontSize: '0.82rem',
+                        padding: '0.75rem 0.85rem',
+                        fontSize: '0.88rem',
+                        fontWeight: 700,
                         justifyContent: 'center',
                         textDecoration: 'none',
+                        borderRadius: 'var(--radius-full)',
+                        minWidth: 0,
                       }}
                     >
                       <span>Live Site</span>
-                      <ExternalLink size={14} />
+                      <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>
