@@ -370,8 +370,9 @@ export const PillNavbar: React.FC = () => {
               top: 0,
               left: 0,
               bottom: 0,
-              height: '100vh',
-              width: 'min(330px, 86vw)',
+              height: '100dvh',
+              maxHeight: '100dvh',
+              width: 'min(340px, 92vw)',
               background: 'var(--bg-surface)',
               borderRight: '1px solid var(--border-glow)',
               boxShadow: '15px 0 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px -5px var(--primary-light)',
@@ -381,16 +382,18 @@ export const PillNavbar: React.FC = () => {
               flexDirection: 'column',
               justifyContent: 'space-between',
               overflowY: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              overscrollBehavior: 'contain',
             }}
           >
-            <div>
+            <div style={{ flex: '1 0 auto' }}>
               {/* Drawer Top Header with Logo and Close Button */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '1.25rem 1.25rem 1rem',
+                  padding: '1rem 1.15rem 0.85rem',
                   borderBottom: '1px solid var(--border-color)',
                 }}
               >
@@ -410,7 +413,7 @@ export const PillNavbar: React.FC = () => {
                     <Layers size={17} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: 800, lineHeight: 1.1 }}>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.05rem', fontWeight: 800, lineHeight: 1.1 }}>
                       Core<span className="gradient-text">CodeX</span>
                     </div>
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
@@ -441,8 +444,8 @@ export const PillNavbar: React.FC = () => {
               </div>
 
               {/* Navigation Links list */}
-              <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', padding: '0 0.5rem 0.25rem' }}>
+              <div style={{ padding: '0.75rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                <div style={{ fontSize: '0.68rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', padding: '0 0.5rem 0.15rem' }}>
                   Menu Navigation
                 </div>
 
@@ -457,7 +460,7 @@ export const PillNavbar: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '0.75rem 0.9rem',
+                        padding: '0.6rem 0.85rem',
                         borderRadius: 'var(--radius-md)',
                         textDecoration: 'none',
                         background: isActive ? 'var(--primary-light)' : 'var(--bg-card)',
@@ -465,7 +468,7 @@ export const PillNavbar: React.FC = () => {
                         borderColor: isActive ? 'var(--primary)' : 'var(--border-color)',
                         color: isActive ? 'var(--primary)' : 'var(--text-main)',
                         fontWeight: 700,
-                        fontSize: '0.92rem',
+                        fontSize: '0.88rem',
                         transition: 'all 0.2s ease',
                       }}
                     >
@@ -482,25 +485,29 @@ export const PillNavbar: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct Quick Dial Bottom Area */}
+            {/* Direct Quick Dial Bottom Area - Generous bottom padding to ensure Shubham Singh is 100% visible on all screen heights */}
             <div
               style={{
-                padding: '1.25rem',
+                padding: '0.85rem 1rem calc(2.5rem + env(safe-area-inset-bottom, 24px))',
                 borderTop: '1px solid var(--border-color)',
                 background: 'var(--bg-surface-elevated)',
+                flexShrink: 0,
               }}
             >
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '0.6rem', textTransform: 'uppercase', fontWeight: 700 }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.04em' }}>
                 Direct Founders Line
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {/* Sahil Prasad Card */}
                 <a
                   href="tel:6354729042"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '8px 12px',
+                    flexWrap: 'wrap',
+                    gap: '6px',
+                    padding: '9px 12px',
                     borderRadius: '8px',
                     background: 'var(--primary-light)',
                     color: 'var(--primary)',
@@ -508,21 +515,26 @@ export const PillNavbar: React.FC = () => {
                     fontWeight: 700,
                     textDecoration: 'none',
                     border: '1px solid var(--border-glow)',
+                    transition: 'all 0.2s ease',
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Phone size={13} />
+                    <Phone size={14} />
                     <span>Sahil Prasad (Vadodara)</span>
                   </span>
-                  <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>6354729042</span>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.9, fontFamily: 'var(--font-mono)' }}>+91 6354729042</span>
                 </a>
+
+                {/* Shubham Singh Card - Guaranteed full visibility */}
                 <a
                   href="tel:9559506650"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '8px 12px',
+                    flexWrap: 'wrap',
+                    gap: '6px',
+                    padding: '9px 12px',
                     borderRadius: '8px',
                     background: 'var(--primary-light)',
                     color: 'var(--primary)',
@@ -530,15 +542,18 @@ export const PillNavbar: React.FC = () => {
                     fontWeight: 700,
                     textDecoration: 'none',
                     border: '1px solid var(--border-glow)',
+                    transition: 'all 0.2s ease',
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Phone size={13} />
+                    <Phone size={14} />
                     <span>Shubham Singh (Haridwar)</span>
                   </span>
-                  <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>9559506650</span>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.9, fontFamily: 'var(--font-mono)' }}>+91 9559506650</span>
                 </a>
               </div>
+              {/* Extra safety spacer for mobile home gesture bar */}
+              <div style={{ height: '12px' }} />
             </div>
           </aside>
         </>

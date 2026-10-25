@@ -41,14 +41,15 @@ export const Modal: React.FC<ModalProps> = ({
         top: 0,
         left: 0,
         width: '100vw',
-        height: '100vh',
+        height: '100dvh',
         backgroundColor: 'rgba(0, 0, 0, 0.75)',
         backdropFilter: 'blur(8px)',
         zIndex: 9999,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1rem',
+        padding: '0.75rem',
+        boxSizing: 'border-box',
       }}
       onClick={onClose}
     >
@@ -56,7 +57,7 @@ export const Modal: React.FC<ModalProps> = ({
         style={{
           width: '100%',
           maxWidth,
-          maxHeight: '90vh',
+          maxHeight: '90dvh',
           overflowY: 'auto',
           background: 'var(--bg-surface)',
           border: '1px solid var(--border-glow)',

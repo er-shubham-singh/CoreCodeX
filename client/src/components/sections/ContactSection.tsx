@@ -77,8 +77,8 @@ export const ContactSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '2rem',
             alignItems: 'start',
           }}
         >
@@ -217,9 +217,9 @@ export const ContactSection: React.FC = () => {
                 <span>Haridwar, Uttarakhand, India</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
-                <Mail size={16} color="var(--primary)" />
-                <span>shubham.singh7985@gmail.com</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem', wordBreak: 'break-all' }}>
+                <Mail size={16} color="var(--primary)" style={{ flexShrink: 0 }} />
+                <span style={{ wordBreak: 'break-all' }}>shubham.singh7985@gmail.com</span>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -391,7 +391,7 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   {/* Email & Phone grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
                         Email Address *
@@ -444,7 +444,7 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   {/* Service & Budget grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
                         Target Service *

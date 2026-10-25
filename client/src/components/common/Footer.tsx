@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
             gap: '2rem',
             marginBottom: '2rem',
           }}
@@ -159,8 +159,8 @@ export const Footer: React.FC = () => {
                 <a href="tel:9559506650" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.82rem', fontWeight: 700, color: 'var(--primary)', textDecoration: 'none' }}>
                   <Phone size={12} /> +91 9559506650
                 </a>
-                <a href="mailto:shubham.singh7985@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                  <Mail size={12} /> shubham.singh7985@gmail.com
+                <a href="mailto:shubham.singh7985@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: 'var(--text-muted)', textDecoration: 'none', wordBreak: 'break-all' }}>
+                  <Mail size={12} style={{ flexShrink: 0 }} /> <span style={{ wordBreak: 'break-all' }}>shubham.singh7985@gmail.com</span>
                 </a>
               </div>
             </div>

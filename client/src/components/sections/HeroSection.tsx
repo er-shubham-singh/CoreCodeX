@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             alignItems: 'center',
             gap: '2rem',
           }}
@@ -218,14 +218,14 @@ export const HeroSection: React.FC = () => {
         <div
           style={{
             marginTop: '4rem',
-            padding: '1.75rem',
+            padding: '1.25rem',
             borderRadius: 'var(--radius-lg)',
             background: 'var(--bg-card)',
             border: '1px solid var(--border-color)',
             backdropFilter: 'blur(10px)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-            gap: '1.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))',
+            gap: '1rem',
             textAlign: 'center',
           }}
         >

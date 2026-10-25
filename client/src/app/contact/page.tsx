@@ -76,8 +76,8 @@ export default function ContactPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '2rem',
             alignItems: 'start',
             marginBottom: '2.5rem',
           }}
@@ -206,9 +206,9 @@ export default function ContactPage() {
                 <span>Haridwar, Uttarakhand, India</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-                <Mail size={16} color="var(--primary)" />
-                <span>shubham.singh7985@gmail.com</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1.5rem', wordBreak: 'break-all' }}>
+                <Mail size={16} color="var(--primary)" style={{ flexShrink: 0 }} />
+                <span style={{ wordBreak: 'break-all' }}>shubham.singh7985@gmail.com</span>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -371,7 +371,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Email & Phone */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
                         Email Address *
@@ -424,7 +424,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Service & Budget */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
                         Required Service *
@@ -532,8 +532,8 @@ export default function ContactPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: '1.5rem',
           }}
         >
           <div className="glass-card" style={{ padding: '2rem', background: 'var(--bg-surface)' }}>

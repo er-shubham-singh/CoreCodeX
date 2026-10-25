@@ -27,7 +27,7 @@ export default function WorkPage() {
   });
 
   return (
-    <div style={{ paddingTop: '4.75rem', paddingBottom: '2.5rem' }}>
+    <div className="page-content-wrapper">
       <div className="container">
         {/* Page Hero */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 2rem' }}>
@@ -82,9 +82,9 @@ export default function WorkPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '2.5rem',
-            marginBottom: '5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '2rem',
+            marginBottom: '4rem',
           }}
         >
           {filteredProjects.map((project) => (
@@ -182,7 +182,7 @@ export default function WorkPage() {
                     <div
                       style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 75px), 1fr))',
                         gap: '8px',
                         padding: '1rem',
                         borderRadius: 'var(--radius-md)',
@@ -312,7 +312,7 @@ export default function WorkPage() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 110px), 1fr))',
                 gap: '1rem',
                 marginBottom: '1.5rem',
               }}
@@ -346,7 +346,7 @@ export default function WorkPage() {
             <h4 style={{ fontSize: '0.95rem', marginBottom: '0.75rem', color: 'var(--text-main)' }}>
               Core Technical Deliverables:
             </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '0.75rem', marginBottom: '2rem' }}>
               {activeProject.tags.map((t, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <CheckCircle2 size={15} color="var(--primary)" />

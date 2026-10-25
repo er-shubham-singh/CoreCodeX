@@ -45,44 +45,101 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Tab Selector */}
+        {/* Services Quick-Jump Chip Cards (Non-circular, small chip card form) */}
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            gap: '8px',
-            padding: '6px',
-            borderRadius: 'var(--radius-full)',
-            background: 'var(--bg-surface-elevated)',
-            border: '1px solid var(--border-color)',
-            maxWidth: '920px',
-            margin: '0 auto 2rem',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+            gap: '10px',
+            maxWidth: '960px',
+            margin: '0 auto 2.5rem',
+            width: '100%',
           }}
         >
           {servicesData.map((svc) => {
             const isActive = svc.id === activeTab;
+            const metaMap: Record<string, { label: string; sub: string }> = {
+              'web-development': { label: 'Web Apps', sub: 'Next.js & MERN' },
+              'app-development': { label: 'Mobile Apps', sub: 'iOS & Android' },
+              'ai-integration': { label: 'Enterprise AI', sub: 'LLMs & RAG' },
+              'chatbots': { label: 'AI Chatbots', sub: 'Agents & Voice' },
+              'ai-ml': { label: 'AI & ML', sub: 'Custom Models' },
+              'digital-marketing': { label: 'Social Media', sub: 'Posts & Reels' },
+            };
+            const meta = metaMap[svc.id] || { label: svc.title.split('&')[0].trim(), sub: svc.badge };
+
             return (
               <button
                 key={svc.id}
-                onClick={() => setActiveTab(svc.id)}
+                onClick={() => {
+                  setActiveTab(svc.id);
+                  const el = document.getElementById(svc.id);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="service-chip-card"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  padding: '8px 16px',
-                  borderRadius: 'var(--radius-full)',
-                  border: 'none',
-                  background: isActive ? 'var(--primary)' : 'transparent',
-                  color: isActive ? '#FFFFFF' : 'var(--text-secondary)',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
+                  gap: '9px',
+                  padding: '9px 12px',
+                  borderRadius: '10px',
+                  border: '1px solid',
+                  borderColor: isActive ? 'var(--primary)' : 'var(--border-color)',
+                  background: isActive ? 'var(--primary-light)' : 'var(--bg-surface-elevated)',
+                  color: isActive ? 'var(--primary)' : 'var(--text-main)',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
+                  textAlign: 'left',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: isActive ? '0 0 16px -4px var(--primary-light)' : 'var(--glass-shadow)',
+                  boxSizing: 'border-box',
+                  width: '100%',
                 }}
               >
-                {getIcon(svc.iconName)}
-                <span>{svc.title.split('&')[0].trim()}</span>
+                <div
+                  style={{
+                    width: '30px',
+                    height: '30px',
+                    borderRadius: '7px',
+                    background: isActive ? 'var(--primary)' : 'var(--bg-card)',
+                    color: isActive ? '#FFFFFF' : 'var(--primary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {getIcon(svc.iconName)}
+                </div>
+                <div style={{ minWidth: 0, overflow: 'hidden', flex: 1 }}>
+                  <div
+                    style={{
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {meta.label}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '0.68rem',
+                      color: isActive ? 'var(--primary)' : 'var(--text-muted)',
+                      fontWeight: 500,
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      marginTop: '2px',
+                    }}
+                  >
+                    {meta.sub}
+                  </div>
+                </div>
               </button>
             );
           })}
@@ -106,8 +163,8 @@ export default function ServicesPage() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: '3rem',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                  gap: '2.5rem',
                   alignItems: 'center',
                 }}
               >

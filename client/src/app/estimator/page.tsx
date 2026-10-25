@@ -40,7 +40,7 @@ export default function EstimatorPage() {
       : '4 - 6 Weeks';
 
   return (
-    <div style={{ paddingTop: '4.75rem', paddingBottom: '2.5rem' }}>
+    <div className="page-content-wrapper">
       <div className="container">
         {/* Page Hero */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 2rem' }}>
@@ -71,7 +71,7 @@ export default function EstimatorPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
               gap: '2.5rem',
               alignItems: 'center',
             }}
@@ -83,7 +83,7 @@ export default function EstimatorPage() {
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
                   1. Target Software / Growth Service
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '8px' }}>
                   {[
                     { id: 'web', label: 'Next.js Web App / SaaS' },
                     { id: 'mobile', label: 'Mobile App (iOS/Android)' },
@@ -120,7 +120,7 @@ export default function EstimatorPage() {
                 <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.75rem' }}>
                   2. Project Maturity Level
                 </label>
-                <div style={{ display: 'flex', gap: '10px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                   {[
                     { id: 'mvp', label: 'MVP Prototype' },
                     { id: 'growth', label: 'Production Growth' },
@@ -131,7 +131,7 @@ export default function EstimatorPage() {
                       type="button"
                       onClick={() => setScale(item.id as typeof scale)}
                       style={{
-                        flex: 1,
+                        flex: '1 1 min(100%, 100px)',
                         padding: '10px',
                         borderRadius: '8px',
                         border: '1px solid',
@@ -239,7 +239,7 @@ export default function EstimatorPage() {
                   border: '1px solid var(--border-color)',
                   marginBottom: '1.5rem',
                   display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 120px), 1fr))',
                   gap: '12px',
                   textAlign: 'left',
                   fontSize: '0.85rem',
@@ -271,7 +271,7 @@ export default function EstimatorPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
             gap: '1.5rem',
           }}
         >

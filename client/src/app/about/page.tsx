@@ -81,8 +81,8 @@ export default function AboutPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.75rem',
             }}
           >
             {leadership.map((leader, idx) => (
@@ -152,7 +152,7 @@ export default function AboutPage() {
                     <a
                       href={leader.callUrl}
                       className="btn-pill-primary"
-                      style={{ flex: 1, padding: '0.65rem 1rem', fontSize: '0.85rem', textDecoration: 'none', justifyContent: 'center' }}
+                      style={{ flex: '1 1 min(100%, 140px)', padding: '0.65rem 1rem', fontSize: '0.85rem', textDecoration: 'none', justifyContent: 'center' }}
                     >
                       <Phone size={14} />
                       <span>Call {leader.phone}</span>
@@ -161,7 +161,7 @@ export default function AboutPage() {
                       <a
                         href={leader.emailUrl}
                         className="btn-pill-secondary"
-                        style={{ flex: 1, padding: '0.65rem 1rem', fontSize: '0.85rem', textDecoration: 'none', justifyContent: 'center' }}
+                        style={{ flex: '1 1 min(100%, 100px)', padding: '0.65rem 1rem', fontSize: '0.85rem', textDecoration: 'none', justifyContent: 'center' }}
                       >
                         <Mail size={14} />
                         <span>Email</span>
@@ -184,8 +184,8 @@ export default function AboutPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+              gap: '1.5rem',
             }}
           >
             {coreValues.map((val, idx) => (

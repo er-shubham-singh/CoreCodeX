@@ -56,9 +56,9 @@ export const TrustSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.75rem',
-            marginBottom: '4.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+            gap: '1.5rem',
+            marginBottom: '4rem',
           }}
         >
           {trustPillars.map((pillar, idx) => (
@@ -121,7 +121,7 @@ export const TrustSection: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
               gap: '1.5rem',
               position: 'relative',
             }}

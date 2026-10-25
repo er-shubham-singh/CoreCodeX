@@ -44,7 +44,7 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div style={{ paddingTop: '4.75rem', paddingBottom: '2.5rem' }}>
+    <div className="page-content-wrapper">
       <div className="container">
         {/* Page Hero */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 2rem' }}>
@@ -126,7 +126,7 @@ export default function ReviewsPage() {
                   Submit Client Feedback
                 </h3>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1rem', marginBottom: '1rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 600, marginBottom: '0.35rem' }}>
                       Your Name *
@@ -195,7 +195,7 @@ export default function ReviewsPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '1.75rem',
             marginBottom: '2.5rem',
           }}

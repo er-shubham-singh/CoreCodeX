@@ -69,7 +69,7 @@ export const EstimatorSection: React.FC = () => {
             padding: '2rem',
             borderRadius: 'var(--radius-lg)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '2rem',
             alignItems: 'center',
           }}
@@ -81,7 +81,7 @@ export const EstimatorSection: React.FC = () => {
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
                 1. Select Primary Service
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '8px' }}>
                 {[
                   { id: 'web', label: 'Next.js Web App' },
                   { id: 'mobile', label: 'Mobile App (iOS/Android)' },
@@ -118,7 +118,7 @@ export const EstimatorSection: React.FC = () => {
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.65rem' }}>
                 2. Project Maturity Level
               </label>
-              <div style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {[
                   { id: 'mvp', label: 'MVP Prototype' },
                   { id: 'growth', label: 'Production Growth' },
@@ -129,7 +129,7 @@ export const EstimatorSection: React.FC = () => {
                     type="button"
                     onClick={() => setScale(item.id as typeof scale)}
                     style={{
-                      flex: 1,
+                      flex: '1 1 min(100%, 100px)',
                       padding: '8px 10px',
                       borderRadius: '8px',
                       border: '1px solid',
@@ -167,7 +167,7 @@ export const EstimatorSection: React.FC = () => {
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.65rem' }}>
                 3. Delivery Speed
               </label>
-              <div style={{ display: 'flex', gap: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {[
                   { id: 'standard', label: 'Standard Timeline' },
                   { id: 'express', label: '⚡ Express Rush Sprint' },
@@ -177,7 +177,7 @@ export const EstimatorSection: React.FC = () => {
                     type="button"
                     onClick={() => setTimeline(item.id as typeof timeline)}
                     style={{
-                      flex: 1,
+                      flex: '1 1 min(100%, 130px)',
                       padding: '8px 10px',
                       borderRadius: '8px',
                       border: '1px solid',
@@ -235,7 +235,7 @@ export const EstimatorSection: React.FC = () => {
                 border: '1px solid var(--border-color)',
                 marginBottom: '1.5rem',
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 120px), 1fr))',
                 gap: '8px',
                 textAlign: 'left',
                 fontSize: '0.8rem',
