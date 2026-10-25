@@ -1,0 +1,17 @@
+{
+  "name": "corecodex-mern-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CoreCodeX - Next-Gen Digital & AI Engineering Agency (MERN + Next.js)",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start",
+    "build:client": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
